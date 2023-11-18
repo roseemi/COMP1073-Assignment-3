@@ -1,0 +1,417 @@
+/*******************
+ Global styling
+ *******************/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-width: 100%;
+    background-color: #e8e3dc;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: #d6cfc5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Cabin", sans-serif;
+    font-size: 2rem;
+    color: #2e2d2d;
+}
+
+h2 {
+    font-size: 4rem;
+    width: 100%;
+    padding: 1em 0;
+    text-align: center;
+}
+
+p,
+a,
+li {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input[type=submit] {
+    display: inline-block;
+    width: 100%;
+    padding: 1em;
+    font-size: 1rem;
+}
+
+/*******************
+ Styling for the header
+ *******************/
+#top-header {
+    display: flex;
+    align-items: center;
+    max-height: 6em;
+    width: 100%;
+    background-color: #853f36;
+    position: fixed;
+    color: #f0ede9;
+}
+
+#logo-container {
+    max-height: 100%;
+    display: inline-block;
+    max-height: 6em;
+}
+
+#logo-container > img {
+    max-height: inherit;
+    padding: 0menu5em;
+}
+
+#company-text-header {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(1rem, 4vw, 2rem);
+    flex-grow: 1;
+    padding-left: 0.5em;
+}
+
+#top-header nav menu {
+    display: flex;
+    list-style: none;
+}
+
+#top-header nav menu li {
+    padding: 0 1em;
+    font-size: 1.3rem;
+}
+
+/*******************
+ Styling for the main body
+ *******************/
+
+main {
+    grid-column: 2;
+    grid-row: 1;
+    color: #0e0e0e;
+    align-items: center;
+    margin-top: 6em;
+    padding: 1em;
+}
+
+.product-promo {
+    display: flex;
+    width: 100%;
+    height: 10em;
+    font-size: 3rem;
+    color: #f4f4f4;
+    background-image: url("../img/header.jpg");
+    background-size: cover;
+}
+
+.product-promo div:nth-child(1) {
+    /* Transparent mask to make the text legible */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.product-items {
+    height: 4em;
+}
+
+/*******************
+ Product plates styling
+ *******************/
+.menu-item {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 1em;
+}
+
+.menu-item > * {
+    margin: 0.5em 0;
+}
+
+/* Adjust the (and up) and ingredients */
+.menu-item p:nth-child(4),
+.menu-item p:nth-child(5) {
+    font-size: 1rem;
+    color: #696564;
+    padding: 2%;
+}
+
+.price {
+    font-size: 2rem;
+    color: #454343;
+}
+
+/*******************
+ Pizza menu styling
+ *******************/
+#menu,
+#side-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+#menu div,
+#side-menu div {
+    max-width: 400px;
+    flex: 1 1 23%;
+}
+
+#menu img,
+#side-menu img {
+    width: 100%;
+    height: 230px;
+}
+
+/*******************
+ Ordering form
+ *******************/
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+    margin: 1em 0 0;
+    text-align: center;
+}
+
+.container {
+    width: 70%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.pizza-order img {
+    width: 400px;
+    height: auto;
+}
+
+#pizza-specifications,
+#toppings-specifications {
+    margin: 1em 0;
+}
+
+#pizza-specifications > select,
+#sides-specifications > select {
+    display: block;
+    margin: 1em auto;
+    width: 60%;
+    padding: 1em;
+}
+
+#toppings-specifications {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    grid-template-rows: 1fr 3fr;
+}
+
+.pizza-specifications-header {
+    padding: 0.5em;
+}
+
+.toppings-specifications-header {
+    grid-column: 1/-1;
+    grid-row: 1;
+}
+
+.selection {
+    display: block;
+    padding: 3px;
+    text-align: right;
+}
+
+.add-to-cart-pizza,
+.add-to-cart-sides { 
+    width: 60%;
+}
+
+/* Picture of side being ordered (in theory) */
+.image-sides {
+    width: 60%;
+    margin: 2em auto;
+}
+
+.image-sides img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*******************
+ Pseudo-checkout cart styling
+ *******************/
+#sidebar-wrapper {
+    position: fixed;
+    margin-top: 7em;
+    padding: 1em;
+    max-width: calc(100vw - 79%);
+    overflow: hidden;
+}
+
+#sidebar form {
+    border-radius: 5px;
+    background-color: #e8e3dc;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: auto;
+    padding: 1em;
+    gap: 2em;
+}
+
+#sidebar-total-items {
+    font-size: 2rem;
+}
+
+#sidebar-item-name > p,
+#sidebar-item-price > p {
+    padding: 0.5em 0;
+}
+
+#sidebar-submit {
+    grid-column: 1/-1;
+}
+
+/*******************
+Footer styling
+ *******************/
+footer {
+    grid-column: 1/-1;
+    background-color: #57524c;
+}
+
+footer section {
+    display: flex;
+    align-items: center;
+}
+
+footer section div {
+    padding: 1%;
+    width: 100%;
+    color: #f4f4f4;
+}
+
+footer section div:nth-child(1) {
+    text-align: right;
+}
+
+footer section div:nth-child(2),
+footer section div:nth-child(3) {
+    width: max-content;
+    text-align: center;
+}
+
+footer section div:nth-child(3) img {
+    width: 100%;
+    height: auto;
+}
+
+/*******************
+Responsive Design
+ *******************/
+@media screen and (max-width: 1440px) {
+    #menu div {
+        flex: 1 1 25%;
+        /* Adjust columns to x3 */
+    }
+
+    .side-menu div {
+        flex: 1 1 50%;
+        /* Adjust columns to x2 (to make them uniform) */
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    h1,
+    h1 a {
+        font-size: 1.8rem;
+    }
+
+    /* Move the checkout cart to the bottom */
+    body {
+        grid-template-areas:
+            "header header header header"
+            "main main main main"
+            "sidebar sidebar sidebar sidebar"
+            "footer footer footer footer";
+    }
+
+    #menu div {
+        flex: 1 1 50%;
+        /* Adjust columns to x2 */
+    }
+
+    aside {
+        padding: 20px 0px;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Generally just making things smaller to suit the screen */
+    h1 {
+        font-size: 1rem;
+    }
+
+    .product-promo {
+        font-size: 2.5rem;
+        margin-top: 10%;
+    }
+
+    #menu img {
+        height: 260px;
+    }
+
+    /* Reformatting the footer to be vertical instead of horizontal */
+    footer section {
+        flex-wrap: wrap;
+    }
+
+    footer section div {
+        display: flex;
+        height: max-content;
+        justify-content: center;
+    }
+
+    footer section div:nth-child(1) {
+        text-align: center;
+    }
+
+    footer section div:nth-child(3) {
+        width: 100%;
+        height: max-content;
+    }
+
+    footer section div:nth-child(3) img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header nav menu li {
+        font-size: 0.8rem;
+    }
+
+    .product-promo {
+        font-size: 2rem;
+        margin-top: 20%;
+    }
+}
